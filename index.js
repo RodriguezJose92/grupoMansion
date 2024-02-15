@@ -237,12 +237,21 @@ async function serverData({
     createBtns({ father: containerBtns, sku: skuNumber, idCompany: idCompanyMudi, link3D: server.URL_WEB, color: color, zBtns: zIndexBtns, zModal: zIndexModal, ButtonsY: positionBtnsY });
     sendDataLayer({ sku: skuNumber })
   };
-  
-  MudiExperience({
-    tokenApi: 'FuPsXyB2khe9WF2EUBs7',
-    skuNumber: document.body.querySelector('[itemprop="sku"]').innerHTML,
-    idCompanyMudi: 403,
-    color: '#cf2928',
-    containerBtns: document.querySelector('#product-images-large'),
-    zIndexModal: 10000000000,
-  }); 
+
+    const initInterval = setInterval(()=>{
+        if (document.body.querySelector('[itemprop="sku"]')){
+            MudiExperience({
+                tokenApi: 'FuPsXyB2khe9WF2EUBs7',
+                skuNumber: document.body.querySelector('[itemprop="sku"]').innerHTML,
+                idCompanyMudi: 403,
+                color: '#cf2928',
+                containerBtns: document.querySelector('#product-images-large'),
+                zIndexModal: 10000000000,
+              }); 
+                clearInterval(initInterval)
+            }
+        else{
+            return false
+        }
+    },1000)
+ 
