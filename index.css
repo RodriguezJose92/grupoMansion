@@ -899,3 +899,7 @@ iframe {
         transform: translateX(0%);
     }
 }
+
+.img-fluid.bottom-right {
+    display:none ! important
+}
