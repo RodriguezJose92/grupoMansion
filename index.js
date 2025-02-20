@@ -330,7 +330,6 @@ setTimeout(() => {
         const container = document.querySelector('#product-images-large');
 
         if (sku && container) {
-            container.style.zIndex = "1000000000000000"; // Corrección del error
             mudiExperience.experienceOn(sku, container);
         } else {
             console.error('Error: No se pudo encontrar el SKU o el contenedor.');
