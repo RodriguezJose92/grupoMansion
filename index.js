@@ -320,22 +320,24 @@ class MudiExperience{
     };
     
     };
-    const mudiExperience = new MudiExperience();
-    
-    setTimeout(() => {
-        const skuElement = document.body.querySelector('[itemprop="sku"]');
-    
-        if (skuElement) {
-            const sku = skuElement.textContent.trim(); 
-            const container = document.querySelector('#product-images-large');
-    
-            if (sku && container) {
-                mudiExperience.experienceOn(sku, container);
-            } else {
-                console.error('Error: No se pudo encontrar el SKU o el contenedor.');
-            }
+  const mudiExperience = new MudiExperience();
+
+setTimeout(() => {
+    const skuElement = document.body.querySelector('[itemprop="sku"]');
+
+    if (skuElement) {
+        const sku = skuElement.textContent.trim(); 
+        const container = document.querySelector('#product-images-large');
+
+        if (sku && container) {
+            container.style.zIndex = "1000000000000000"; // Corrección del error
+            mudiExperience.experienceOn(sku, container);
         } else {
-            console.error('Error: No se pudo encontrar el elemento SKU.');
+            console.error('Error: No se pudo encontrar el SKU o el contenedor.');
         }
-    }, 1500);
+    } else {
+        console.error('Error: No se pudo encontrar el elemento SKU.');
+    }
+}, 1500);
+
     
