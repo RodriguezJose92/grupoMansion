@@ -2,7 +2,7 @@
 class MudiExperience{
 
     constructor(){
-        this.color              = "#14140f";
+        this.color              = "#cf2928";
         this.dataSever          = null;
         this.skuNumber          = null;
         this.fatherContainer    = null;
