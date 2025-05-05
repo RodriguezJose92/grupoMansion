@@ -98,7 +98,7 @@ class MudiExperience{
     
         containerBtns.querySelector('#img3DBtn').addEventListener('click',()=>{
             this.createModal();
-            //this.sendEventInteraction('3D');
+            this.sendEventInteraction('3D');
         });
     
         fragment.appendChild(containerBtns)
@@ -221,7 +221,7 @@ class MudiExperience{
             else {
                 window.open(`${this.dataServer.URL_AR}`,"_BLANK");
             } 
-            // flagAR && this.sendEventInteraction('AR')
+            flagAR && this.sendEventInteraction('AR')
         });
     
         /** Verify Style Bttn AR  */
@@ -317,6 +317,7 @@ class MudiExperience{
         /** Create Buttons */
         this.createBtns();
     
+        this.sendEventViewer()
     };
     
     };
